@@ -1,4 +1,4 @@
-﻿import fsys;
+import fsys;
 import config;
 import process;
 import ide;
@@ -373,4 +373,6 @@ winform.buttonMakeUpdater.oncommand = function(id,event){
 }
 
 win.setActive(winform.hwnd);
+process.explore_select(ide.getPublishPath())
+win.close(ide.getMainHwnd());
 win.loopMessage();
