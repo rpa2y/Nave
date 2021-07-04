@@ -14,28 +14,10 @@ command.dispatchIdeCommand = function( method,...) {
 
 thread.invoke( 
 	function(){
-		//import win.version;
-		//import web.rest.jsonClient;	
 		import ide;
-		import win;
-/*
 		import ide.command;
 		ide.command.join( ide.processGroup() );
-*/
-		
-		sleep(500);
-		if( ..io.exist("~\extensions\trigger\init-user.aardio") ){
-    		ide.createProcess("~\extensions\trigger\init-user.aardio");
-		};
-		
-		if( ide.getConfig("statusBarPlugin") == "true" ){
-			ide.createProcess("~\tools\开发环境\statusBar.aardio");
-		}
-		
-		//win.show(ide.getMainHwnd(),false)
-		sleep(1000);
 		//ide.publish();
-		
 	}
 )
 
