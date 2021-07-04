@@ -1,0 +1,30 @@
+import win.ui;
+/*DSG{{*/
+mainForm = win.form(text="NaveRunner";right=311;bottom=111)
+mainForm.add(
+button={cls="button";text="打包！";left=16;top=16;right=136;bottom=88;z=1}
+)
+/*}}*/
+
+import process;
+import winex;
+import win;
+var hwnd=null;
+
+mainForm.button.oncommand = function(id,event){
+	var id=process.execute("E:\data\web\NaveObj\aardio\aardio.exe");
+	//sleep(1000)
+	while(hwnd==null){
+	hwnd=winex.findMainWnd(,,id);
+	}
+	/*
+	mainForm.show(false)
+	win.setOwner(hwnd,mainForm.hwnd)
+*/
+	import console;
+	console.log(id,hwnd)
+	//win.show(hwnd,false)
+}
+
+mainForm.show();
+return win.loopMessage();
