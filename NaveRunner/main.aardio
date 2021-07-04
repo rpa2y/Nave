@@ -1,30 +1,11 @@
-import win.ui;
-/*DSG{{*/
-mainForm = win.form(text="NaveRunner";right=311;bottom=111)
-mainForm.add(
-button={cls="button";text="打包！";left=16;top=16;right=136;bottom=88;z=1}
-)
-/*}}*/
-
 import process;
-import winex;
-import win;
-var hwnd=null;
+import console;
+console.log("正在复制文件……");
+import fsys;
 
-mainForm.button.oncommand = function(id,event){
-	var id=process.execute("E:\data\web\NaveObj\aardio\aardio.exe");
-	//sleep(1000)
-	while(hwnd==null){
-	hwnd=winex.findMainWnd(,,id);
-	}
-	/*
-	mainForm.show(false)
-	win.setOwner(hwnd,mainForm.hwnd)
-*/
-	import console;
-	console.log(id,hwnd)
-	//win.show(hwnd,false)
-}
-
-mainForm.show();
-return win.loopMessage();
+fsys.copy("\dist\*","\aardio\project\aardio工程\res\",0x4/*_FOF_SILENT*/);
+console.log("正在打包……");
+process.executeWait("\aardio\aardio.exe");
+console.log("正在清理文件……");
+fsys.delete("\aardio\project\aardio工程\res\*",)
+console.log("成功完成！");
