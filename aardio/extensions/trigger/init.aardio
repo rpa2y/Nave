@@ -17,7 +17,7 @@ thread.invoke(
 		import ide;
 		import ide.command;
 		ide.command.join( ide.processGroup() );
-		ide.openDocument("/project/aardio工程/default.aproj")
+		ide.openDocument(io._exedir+"project\aardio工程\default.aproj")
 		//ide.publish();
 	}
 )
